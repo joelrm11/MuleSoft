@@ -62,6 +62,20 @@ public class SQLite {
 		
 	}
 	
+	//Selecting movies by specific actor
+	System.out.println("");
+	String sql10="select rowid, * from Movies where Actor='Gerard Buttler' ";
+	ResultSet result = statement.executeQuery(sql10);
+	while(result.next()) {
+		String Name=result.getString("Name");
+		String Actor=result.getString("Actor");
+		String Actress=result.getString("Actress");
+		String Director=result.getString("Director");
+		String Year_of_release=result.getString("Year_of_release");
+		
+		System.out.println(Name+" | "+Actor+" | "+Actress+" | "+Director+" | "+Year_of_release);
+		
+	}
 	}
 
 }
